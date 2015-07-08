@@ -10,7 +10,6 @@ namespace FractionMath
     {
         static void Main(string[] args)
         {
-            Fraction oneFourth = new Fraction("1/4");
         }
     }
 
