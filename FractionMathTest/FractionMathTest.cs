@@ -42,5 +42,28 @@ namespace FractionMathTest
             Assert.Fail("Expected FormatException");
         }
 
+        [TestMethod]
+        public void TestAddFractionSimple()
+        {
+            Fraction f1 = new Fraction("4/9");
+            Fraction f2 = new Fraction("11/12");
+            Assert.AreEqual(new Fraction("49/36"), f1 + f2);
+        }
+
+        [TestMethod]
+        public void TestLowestCommonDenominator()
+        {
+            Fraction fourNinths = new Fraction("4/9");
+            Fraction elevenTwelths = new Fraction("11/12");
+            Assert.AreEqual(36, Fraction.LowestCommonDenominator(fourNinths, elevenTwelths));
+        }
+
+        [TestMethod]
+        public void TestSimplify()
+        {
+            Assert.AreEqual(new Fraction("1/4"), new Fraction("4/16").Simplify());
+            Assert.AreEqual(new Fraction("1/4"), new Fraction("1/4").Simplify());
+        }
+
     }
 }
